@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Expense Tracker Pro</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container mt-5">
+
+  <!-- HEADER -->
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>💸 Expense Tracker Pro</h2>
+    <div>
+      <button class="btn btn-dark" id="toggleTheme">🌙</button>
+      <button class="btn btn-success" onclick="downloadPDF()">Export PDF</button>
+    </div>
+  </div>
+
+  <!-- FORM -->
+  <div class="card p-4 mb-4 glass">
+    <form id="expenseForm" class="row g-3">
+
+      <div class="col-md-3">
+        <input type="text" id="desc" class="form-control" placeholder="Description" required>
+      </div>
+
+      <div class="col-md-2">
+        <input type="number" id="amount" class="form-control" placeholder="Amount" required>
+      </div>
+
+      <div class="col-md-2">
+        <select id="category" class="form-select">
+          <option>Food</option>
+          <option>Travel</option>
+          <option>Shopping</option>
+          <option>Bills</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="col-md-3">
+        <input type="date" id="date" class="form-control" required>
+      </div>
+
+      <div class="col-md-2 d-grid">
+        <button class="btn btn-primary">Add</button>
+      </div>
+
+    </form>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <div class="card p-3 glass">
+        <h5>Total Expense: ₹<span id="total">0</span></h5>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card p-3 glass">Filter
+        <select id="filter" class="form-select">
+          <option value="All">All Categories</option>
+          <option value="Food">Food</option>
+          <option value="Travel">Travel</option>
+          <option value="Shopping">Shopping</option>
+          <option value="Bills">Bills</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- TABLE -->
+  <div class="card p-3 mb-4 glass">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Amount</th>
+          <th>Category</th>
+          <th>Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="expenseTable"></tbody>
+    </table>
+  </div>
+
+  <!-- CHARTS -->
+  <div class="row">
+    <div class="col-md-6">
+      <canvas id="pieChart"></canvas>
+    </div>
+    <div class="col-md-6">
+      <canvas id="barChart"></canvas>
+    </div>
+  </div>
+
+</div>
+
+<!-- LIBRARIES -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>

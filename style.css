@@ -1,0 +1,30 @@
+body {
+  background: linear-gradient(135deg, #1e1e2f, #3a3a5f);
+  color: white;
+  font-family: 'Times New Roman', serif;
+}
+
+.glass {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  color: white;
+}
+
+input, select {
+  border-radius: 10px !important;
+}
+
+button {
+  border-radius: 10px !important;
+}
+
+.light-mode {
+  background: #f5f5f5;
+  color: black;
+}
+
+.light-mode .glass {
+  background: white;
+  color: black;
+}
